@@ -33,9 +33,8 @@ confluent local kafka start --brokers 1
 ## Execute producer app
 
 ```
-node producer.js
+node producer-[gzip|snappy].js
 ```
-
 
 ## Consume messages from topic-test using Kafka CLIs
 
