@@ -40,5 +40,7 @@ node producer.js
 ## Consume messages from topic-test using Kafka CLIs
 
 ```
-kafka-console-consumer --bootstrap-server localhost:9092 --topic topic-test --from-beginning
+kafka-console-consumer --bootstrap-server localhost:9092 \
+    --topic topic-test \
+    --from-beginning
 ```
