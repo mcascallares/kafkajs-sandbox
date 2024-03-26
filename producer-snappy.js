@@ -7,7 +7,7 @@ CompressionCodecs[CompressionTypes.Snappy] = SnappyCodec
 const kafka = new Kafka({
   logLevel: logLevel.INFO,
   brokers: [`localhost:9092`],
-  clientId: 'example-producer'
+  clientId: 'producer-snappy'
 })
 
 const topic = 'topic-test'
@@ -44,7 +44,7 @@ const sendMessage = () => {
         msgNumber,
       })
     })
-    .catch(e => kafka.logger().error(`[example/producer] ${e.message}`, { stack: e.stack }))
+    .catch(e => kafka.logger().error(`[producer-snappy] ${e.message}`, { stack: e.stack }))
 }
 
 let intervalId
@@ -53,7 +53,7 @@ const run = async () => {
   intervalId = setInterval(sendMessage, 3000)
 }
 
-run().catch(e => kafka.logger().error(`[example/producer] ${e.message}`, { stack: e.stack }))
+run().catch(e => kafka.logger().error(`[producer-snappy] ${e.message}`, { stack: e.stack }))
 
 const errorTypes = ['unhandledRejection', 'uncaughtException']
 const signalTraps = ['SIGTERM', 'SIGINT', 'SIGUSR2']
@@ -74,7 +74,7 @@ errorTypes.map(type => {
 signalTraps.map(type => {
   process.once(type, async () => {
     console.log('')
-    kafka.logger().info('[example/producer] disconnecting')
+    kafka.logger().info('[producer-snappy] disconnecting')
     clearInterval(intervalId)
     await producer.disconnect()
   })
