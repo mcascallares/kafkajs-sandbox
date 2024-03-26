@@ -30,7 +30,7 @@ npm install
 confluent local kafka start --brokers 1
 ```
 
-## Execute producer app
+## Execute producer app, using different compression algorithms
 
 ```
 node producer-[gzip|snappy].js
