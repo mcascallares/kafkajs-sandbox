@@ -27,7 +27,7 @@ npm install
 ## Launch kafka brokers for development
 
 ```
-confluent local kafka start --brokers 1
+confluent local kafka start --brokers 1 --plaintext-ports "9092"
 ```
 
 ## Execute producer app, using different compression algorithms
