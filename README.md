@@ -7,6 +7,7 @@ This repo is a getting started project to easily get a producer app running usin
 
 - nvm
 - confluent CLI
+- Docker
 
 ## Install and configure nodejs using nvm
 
